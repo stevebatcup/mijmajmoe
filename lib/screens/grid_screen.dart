@@ -200,7 +200,7 @@ class _GridScreenState extends State<GridScreen> {
             Visibility(
               visible: !gameOver,
               child: Container(
-                height: 85.0,
+                height: 90.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -232,7 +232,7 @@ class _GridScreenState extends State<GridScreen> {
                                   right: 15.0),
                               child: Text(
                                 player1.character,
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 27.0),
                               ),
                             ),
                             Text(currentPlayer == player1 ? 'Your turn' : ''),
@@ -271,7 +271,7 @@ class _GridScreenState extends State<GridScreen> {
                                   right: 15.0),
                               child: Text(
                                 player2.character,
-                                style: TextStyle(fontSize: 30.0),
+                                style: TextStyle(fontSize: 27.0),
                               ),
                             ),
                             Text(currentPlayer == player2 ? 'Your turn' : '',
@@ -287,7 +287,7 @@ class _GridScreenState extends State<GridScreen> {
             Visibility(
               visible: gameOver,
               child: Container(
-                height: 85.0,
+                height: 90.0,
                 child: Column(
                   children: <Widget>[
                     Padding(

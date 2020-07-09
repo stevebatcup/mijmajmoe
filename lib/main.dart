@@ -9,11 +9,13 @@ const Color primaryColor = Color(0xFF00bb53);
 const Color onBackgroundColor = Color(0XFF454545);
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
+
   runApp(MijMajMoe());
 }
 
 class MijMajMoe extends StatelessWidget {
-  final Player player1 = Player(playerIndex: 1, character: '🏎');
+  final Player player1 = Player(playerIndex: 1, character: '🐸');
   final Player player2 = Player(playerIndex: 2, character: '🚌');
   final ColorScheme colorScheme = ColorScheme(
     primary: primaryColor,
