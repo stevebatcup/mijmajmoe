@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:mijmajmoe/player.dart';
-import 'emoji_option.dart';
+import 'package:mijmajmoe/models/emoji_option.dart';
+import 'package:mijmajmoe/models/player.dart';
 import 'package:provider/provider.dart';
-import 'player_provider.dart';
+
+import '../player_provider.dart';
 
 class ChooseEmojiScreen extends StatelessWidget {
   ChooseEmojiScreen({

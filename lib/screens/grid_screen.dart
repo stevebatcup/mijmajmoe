@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mijmajmoe/winning_strategy.dart';
-import 'package:mijmajmoe/square_tile.dart';
-import 'package:mijmajmoe/player.dart';
-import 'package:mijmajmoe/emoji_option.dart';
+import 'package:mijmajmoe/componenets/square_tile.dart';
+import 'package:mijmajmoe/models/emoji_option.dart';
+import 'package:mijmajmoe/models/player.dart';
+import 'package:mijmajmoe/models/winning_strategy.dart';
 import 'choose_emoji_screen.dart';
 import 'new_game_dialog.dart';
 import 'package:mijmajmoe/player_provider.dart';
 import 'package:provider/provider.dart';
 import 'package:audioplayers/audio_cache.dart';
 
-class Grid extends StatefulWidget {
+class GridScreen extends StatefulWidget {
   @override
-  _GridState createState() => _GridState();
+  _GridScreenState createState() => _GridScreenState();
 }
 
-class _GridState extends State<Grid> {
+class _GridScreenState extends State<GridScreen> {
   int turn;
   bool gameOver;
   WinningStrategy win;
@@ -195,12 +195,12 @@ class _GridState extends State<Grid> {
               style: Theme.of(context).textTheme.headline6,
             ),
             SizedBox(
-              height: 20.0,
+              height: 15.0,
             ),
             Visibility(
               visible: !gameOver,
               child: Container(
-                height: 100.0,
+                height: 85.0,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: <Widget>[
@@ -226,7 +226,7 @@ class _GridState extends State<Grid> {
                                 style: Theme.of(context).textTheme.button),
                             Container(
                               padding: EdgeInsets.only(
-                                  bottom: 5.0,
+                                  bottom: 1.0,
                                   top: 5.0,
                                   left: 15.0,
                                   right: 15.0),
@@ -240,7 +240,7 @@ class _GridState extends State<Grid> {
                         ),
                       ),
                     ),
-                    SizedBox(width: 40.0),
+                    SizedBox(width: 45.0),
                     Container(
                       decoration: currentPlayer == player2
                           ? BoxDecoration(
@@ -265,7 +265,7 @@ class _GridState extends State<Grid> {
                             ),
                             Container(
                               padding: EdgeInsets.only(
-                                  bottom: 5.0,
+                                  bottom: 1.0,
                                   top: 5.0,
                                   left: 15.0,
                                   right: 15.0),
@@ -287,7 +287,7 @@ class _GridState extends State<Grid> {
             Visibility(
               visible: gameOver,
               child: Container(
-                height: 100.0,
+                height: 85.0,
                 child: Column(
                   children: <Widget>[
                     Padding(

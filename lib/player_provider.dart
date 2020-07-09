@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:mijmajmoe/emoji_option.dart';
-import 'player.dart';
+
+import 'models/emoji_option.dart';
+import 'models/player.dart';
 
 class PlayerProvider extends ChangeNotifier {
   final Player player1;
