@@ -190,7 +190,7 @@ class _GridScreenState extends State<GridScreen> {
                 child: Text('Mij Maj Moe',
                     style: Theme.of(context).textTheme.headline2)),
             Text(
-              '( Tic Tac Toe with Emojis 🤔 )',
+              'Tic Tac Toe with Emojis 🤔'.toUpperCase(),
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.headline6,
             ),
@@ -286,36 +286,41 @@ class _GridScreenState extends State<GridScreen> {
             ),
             Visibility(
               visible: gameOver,
-              child: Container(
-                height: 90.0,
-                child: Column(
-                  children: <Widget>[
-                    Padding(
-                      padding: const EdgeInsets.only(top: 30.0),
-                      child: Text(
-                        resultSentence,
-                        style: TextStyle(fontSize: 30.0),
+              child: Center(
+                child: Container(
+                  height: 90.0,
+                  child: Column(
+                    children: <Widget>[
+                      Padding(
+                        padding: const EdgeInsets.only(top: 30.0),
+                        child: Text(
+                          resultSentence,
+                          style: TextStyle(fontSize: 30.0),
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
               ),
             ),
             SizedBox(
               height: 20.0,
             ),
-            GridView.builder(
-              physics: NeverScrollableScrollPhysics(),
-              shrinkWrap: true,
-              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                mainAxisSpacing: 10.0,
-                crossAxisSpacing: 10.0,
-                crossAxisCount: 3,
+            ConstrainedBox(
+              constraints: BoxConstraints(maxWidth: 450),
+              child: GridView.builder(
+                physics: NeverScrollableScrollPhysics(),
+                shrinkWrap: true,
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  mainAxisSpacing: 10.0,
+                  crossAxisSpacing: 10.0,
+                  crossAxisCount: 3,
+                ),
+                itemBuilder: (context, i) {
+                  return squares[i];
+                },
+                itemCount: squares.length,
               ),
-              itemBuilder: (context, i) {
-                return squares[i];
-              },
-              itemCount: squares.length,
             ),
           ],
         ),

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:mijmajmoe/screens/grid_screen.dart';
-import 'package:provider/provider.dart';
 import 'models/player.dart';
 import 'player_provider.dart';
+
+import 'package:provider/provider.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 const Color primaryColor = Color(0xFF00bb53);
@@ -49,9 +50,9 @@ class MijMajMoe extends StatelessWidget {
       fontWeight: FontWeight.w400,
       color: onBackgroundColor,
     ),
-    headline6: GoogleFonts.modak(
+    headline6: GoogleFonts.roboto(
         fontSize: 19,
-        fontWeight: FontWeight.w500,
+        fontWeight: FontWeight.w300,
         letterSpacing: 0.15,
         color: onBackgroundColor),
     subtitle1: GoogleFonts.modak(
