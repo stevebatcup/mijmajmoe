@@ -33,10 +33,10 @@ class NewGameDialog extends StatelessWidget {
                       child: Container(
                         color: Colors.transparent,
                         padding: EdgeInsets.only(
-                            bottom: 15.0, top: 5.0, left: 10.0, right: 10.0),
+                            bottom: 15.0, top: 5.0, left: 2.0, right: 2.0),
                         child: Text(
                           playerProvider.player1.character,
-                          style: TextStyle(fontSize: 50.0),
+                          style: TextStyle(fontSize: 42.5),
                         ),
                       ),
                     ),
@@ -55,10 +55,10 @@ class NewGameDialog extends StatelessWidget {
                       child: Container(
                         color: Colors.transparent,
                         padding: EdgeInsets.only(
-                            bottom: 15.0, top: 5.0, left: 10.0, right: 10.0),
+                            bottom: 15.0, top: 5.0, left: 2.0, right: 2.0),
                         child: Text(
                           playerProvider.player2.character,
-                          style: TextStyle(fontSize: 50.0),
+                          style: TextStyle(fontSize: 42.5),
                         ),
                       ),
                     ),

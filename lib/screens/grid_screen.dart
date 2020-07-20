@@ -166,163 +166,175 @@ class _GridScreenState extends State<GridScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Theme.of(context).colorScheme.background,
-      floatingActionButton: FloatingActionButton(
-        onPressed: showNewGameDialog,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(
-            Radius.circular(
-              15.0,
-            ),
-          ),
-        ),
-        child: Icon(Icons.refresh),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 12.0),
-        child: Column(
-          children: [
-            SizedBox(
-              height: 95.0,
-            ),
-            Flexible(
-                child: Text('Mij Maj Moe',
-                    style: Theme.of(context).textTheme.headline2)),
-            Text(
-              'Tic Tac Toe with Emojis 🤔'.toUpperCase(),
-              textAlign: TextAlign.center,
-              style: Theme.of(context).textTheme.headline6,
-            ),
-            SizedBox(
-              height: 15.0,
-            ),
-            Visibility(
-              visible: !gameOver,
-              child: Container(
-                height: 90.0,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: <Widget>[
-                    Container(
-                      decoration: currentPlayer == player1
-                          ? BoxDecoration(
-                              color: Theme.of(context).colorScheme.surface,
-                              border: Border.all(
-                                color: Colors.black54,
-                              ),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(5.0),
-                              ),
-                            )
-                          : null,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 5.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[
-                            Text('PLAYER 1',
-                                style: Theme.of(context).textTheme.button),
-                            Container(
-                              padding: EdgeInsets.only(
-                                  bottom: 1.0,
-                                  top: 5.0,
-                                  left: 15.0,
-                                  right: 15.0),
-                              child: Text(
-                                player1.character,
-                                style: TextStyle(fontSize: 27.0),
-                              ),
-                            ),
-                            Text(currentPlayer == player1 ? 'Your turn' : ''),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 45.0),
-                    Container(
-                      decoration: currentPlayer == player2
-                          ? BoxDecoration(
-                              color: Theme.of(context).colorScheme.surface,
-                              border: Border.all(
-                                color: Colors.black54,
-                              ),
-                              borderRadius: BorderRadius.all(
-                                Radius.circular(5.0),
-                              ),
-                            )
-                          : null,
-                      child: Padding(
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: 20.0, vertical: 5.0),
-                        child: Column(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: <Widget>[
-                            Text(
-                              'PLAYER 2',
-                              style: Theme.of(context).textTheme.button,
-                            ),
-                            Container(
-                              padding: EdgeInsets.only(
-                                  bottom: 1.0,
-                                  top: 5.0,
-                                  left: 15.0,
-                                  right: 15.0),
-                              child: Text(
-                                player2.character,
-                                style: TextStyle(fontSize: 27.0),
-                              ),
-                            ),
-                            Text(currentPlayer == player2 ? 'Your turn' : '',
-                                style: Theme.of(context).textTheme.button),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
-                ),
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Theme.of(context).colorScheme.background,
+        floatingActionButton: FloatingActionButton.extended(
+          onPressed: showNewGameDialog,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(
+              Radius.circular(
+                10.0,
               ),
             ),
-            Visibility(
-              visible: gameOver,
-              child: Center(
+          ),
+          label: Text(
+            'New Game',
+            style: TextStyle(fontSize: 18),
+          ),
+          icon: Icon(Icons.refresh),
+        ),
+        body: Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 12.0),
+          child: Column(
+            children: [
+              SizedBox(
+                height: 30.0,
+              ),
+              Flexible(
+                child: Text(
+                  'Mij Maj Moe',
+                  style: Theme.of(context).textTheme.headline2,
+                ),
+              ),
+              Visibility(
+                visible: MediaQuery.of(context).size.height > 568,
+                child: Text(
+                  'Tic Tac Toe with Emojis 🤔'.toUpperCase(),
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.headline6,
+                ),
+              ),
+              SizedBox(
+                height: 18.0,
+              ),
+              Visibility(
+                visible: !gameOver,
                 child: Container(
                   height: 90.0,
-                  child: Column(
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: <Widget>[
-                      Padding(
-                        padding: const EdgeInsets.only(top: 30.0),
-                        child: Text(
-                          resultSentence,
-                          style: TextStyle(fontSize: 30.0),
+                      Container(
+                        decoration: currentPlayer == player1
+                            ? BoxDecoration(
+                                color: Theme.of(context).colorScheme.surface,
+                                border: Border.all(
+                                  color: Colors.black54,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(5.0),
+                                ),
+                              )
+                            : null,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 5.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Text('PLAYER 1',
+                                  style: Theme.of(context).textTheme.button),
+                              Container(
+                                padding: EdgeInsets.only(
+                                    bottom: 1.0,
+                                    top: 5.0,
+                                    left: 15.0,
+                                    right: 15.0),
+                                child: Text(
+                                  player1.character,
+                                  style: TextStyle(fontSize: 27.0),
+                                ),
+                              ),
+                              Text(currentPlayer == player1 ? 'Your turn' : ''),
+                            ],
+                          ),
+                        ),
+                      ),
+                      SizedBox(width: 45.0),
+                      Container(
+                        decoration: currentPlayer == player2
+                            ? BoxDecoration(
+                                color: Theme.of(context).colorScheme.surface,
+                                border: Border.all(
+                                  color: Colors.black54,
+                                ),
+                                borderRadius: BorderRadius.all(
+                                  Radius.circular(5.0),
+                                ),
+                              )
+                            : null,
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(
+                              horizontal: 20.0, vertical: 5.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            children: <Widget>[
+                              Text(
+                                'PLAYER 2',
+                                style: Theme.of(context).textTheme.button,
+                              ),
+                              Container(
+                                padding: EdgeInsets.only(
+                                    bottom: 1.0,
+                                    top: 5.0,
+                                    left: 15.0,
+                                    right: 15.0),
+                                child: Text(
+                                  player2.character,
+                                  style: TextStyle(fontSize: 27.0),
+                                ),
+                              ),
+                              Text(currentPlayer == player2 ? 'Your turn' : '',
+                                  style: Theme.of(context).textTheme.button),
+                            ],
+                          ),
                         ),
                       ),
                     ],
                   ),
                 ),
               ),
-            ),
-            SizedBox(
-              height: 20.0,
-            ),
-            ConstrainedBox(
-              constraints: BoxConstraints(maxWidth: 450),
-              child: GridView.builder(
-                physics: NeverScrollableScrollPhysics(),
-                shrinkWrap: true,
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                  mainAxisSpacing: 10.0,
-                  crossAxisSpacing: 10.0,
-                  crossAxisCount: 3,
+              Visibility(
+                visible: gameOver,
+                child: Center(
+                  child: Container(
+                    height: 90.0,
+                    child: Column(
+                      children: <Widget>[
+                        Padding(
+                          padding: const EdgeInsets.only(top: 30.0),
+                          child: Text(
+                            resultSentence,
+                            style: TextStyle(fontSize: 30.0),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
                 ),
-                itemBuilder: (context, i) {
-                  return squares[i];
-                },
-                itemCount: squares.length,
               ),
-            ),
-          ],
+              SizedBox(
+                height: 20.0,
+              ),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 450),
+                child: GridView.builder(
+                  physics: NeverScrollableScrollPhysics(),
+                  shrinkWrap: true,
+                  gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    mainAxisSpacing: 5.0,
+                    crossAxisSpacing: 5.0,
+                    crossAxisCount: 3,
+                  ),
+                  itemBuilder: (context, i) {
+                    return squares[i];
+                  },
+                  itemCount: squares.length,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

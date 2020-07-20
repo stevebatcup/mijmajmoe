@@ -15,7 +15,7 @@ class SquareTile extends StatelessWidget {
     Color inactiveColor = Theme.of(context).colorScheme.surface;
     Color activeColor = Theme.of(context).colorScheme.primaryVariant;
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.all(5.0),
       child: GestureDetector(
         onTap: () {
           if (!tapped) {
@@ -27,12 +27,11 @@ class SquareTile extends StatelessWidget {
           child: ClipRRect(
             borderRadius: BorderRadius.circular(12.0),
             child: Container(
-              height: 120.0,
               color: tapped ? activeColor : inactiveColor,
               child: Center(
                 child: Text(
                   character,
-                  style: TextStyle(fontSize: 50.0),
+                  style: TextStyle(fontSize: 48.0),
                 ),
               ),
             ),

@@ -34,8 +34,8 @@ class ChooseEmojiScreen extends StatelessWidget {
                 child: GridView.builder(
                   shrinkWrap: true,
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    mainAxisSpacing: 1.0,
-                    crossAxisSpacing: 1.0,
+                    mainAxisSpacing: 0.6,
+                    crossAxisSpacing: 0.6,
                     crossAxisCount: 5,
                   ),
                   itemBuilder: (context, i) {
@@ -64,7 +64,7 @@ class ChooseEmojiScreen extends StatelessWidget {
                             child: Center(
                               child: Text(
                                 emojiOptions[i].character,
-                                style: TextStyle(fontSize: 38.0),
+                                style: TextStyle(fontSize: 34.0),
                                 textAlign: TextAlign.center,
                               ),
                             ),
