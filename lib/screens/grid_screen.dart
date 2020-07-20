@@ -187,6 +187,7 @@ class _GridScreenState extends State<GridScreen> {
         body: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 12.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               SizedBox(
                 height: 30.0,

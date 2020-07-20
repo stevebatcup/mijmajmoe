@@ -80,6 +80,7 @@ class MijMajMoe extends StatelessWidget {
         create: (context) => PlayerProvider(player1, player2),
         builder: (context, widget) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Mij Maj Moe',
             theme: ThemeData(
               colorScheme: colorScheme,
