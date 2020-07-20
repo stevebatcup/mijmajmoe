@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mij Maj Moe</title>
+
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/7.16.1/firebase-app.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/7.16.1/firebase-auth.js"></script>
+    <script defer src="/__/firebase/7.16.1/firebase-database.js"></script>
+    <script defer src="/__/firebase/7.16.1/firebase-messaging.js"></script>
+    <script defer src="/__/firebase/7.16.1/firebase-storage.js"></script>
+    <!-- initialize the SDK after all desired features are loaded -->
+    <script defer src="/__/firebase/init.js"></script>
+
+    <style media="screen">
+      body { background: #E6F5E9; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; text-align: center; }
+      h2 { color: #0d5c30; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
+      h1 img#feature_img {
+        max-width: 850px; width: 90vw; margin: 16px auto;
+      }
+      #instructions {
+        max-width: 800px; width: 90vw; margin:auto; text-align: left;
+      }
+      p, ol { line-height: 160%; margin: 16px 0 24px; font-size: 17px; color: #444444; }
+      ol {
+        padding-left: 18px;
+      }
+      a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); color: #0d5c30; }
+      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
+    </style>
+  </head>
+  <body>
+    <h1><img src="./feature.png" id="feature_img" /></h1>
+    <div id="instructions">
+      <p>Mij-Maj-Moe is a simple game using Emojis as characters in a game of Tic-Tac-Toe. <br />Once you've downloaded the app here's how to play...</p>
+      <ol>
+        <li>Click NEW Game</li>
+        <li>Choose Emoji for player 1 by selecting the icon for player 1 and selecting from the popup list.</li>
+        <li>Do the same for player 2</li>
+        <li>Press START</li>
+        <li>Enjoy your game</li>
+      </ol>
+      <p>See <a href="https://www.wikihow.com/Play-Tic-Tac-Toe" target="_blank">this page</a> for instructions on how to plat Tic-Tac-Toe.</p>
+      <p>For help and support with Mij Maj Moe send me an email <a href="mailto:steve.batcup@gmail.com">steve.batcup@gmail.com</a></p>
+    </div>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+        // // The Firebase SDK is initialized and available here!
+        //
+        // firebase.auth().onAuthStateChanged(user => { });
+        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
+        // firebase.messaging().requestPermission().then(() => { });
+        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
+        //
+        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+
+        try {
+          let app = firebase.app();
+          let features = ['auth', 'database', 'messaging', 'storage'].filter(feature => typeof app[feature] === 'function');
+          document.getElementById('load').innerHTML = `Firebase SDK loaded with ${features.join(', ')}`;
+        } catch (e) {
+          console.error(e);
+          document.getElementById('load').innerHTML = 'Error loading the Firebase SDK, check the console.';
+        }
+      });
+    </script>
+  </body>
+</html>
